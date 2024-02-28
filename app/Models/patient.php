@@ -17,4 +17,8 @@ class patient extends Model
     public function measurement_record() :hasMany{
         return $this->hasMany(measurement_record::class);
     }
+
+    public function mealplans(): hasMany{
+        return $this->hasMany(mealplan::class);
+    }
 }
