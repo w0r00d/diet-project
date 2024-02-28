@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('first-name');
             $table->string('last-name');
             $table->date('dob');
-            $table->string('gender');
+            $table->enum('gender', ['female', 'male']);
             $table->string('phone');
             $table->string('email')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

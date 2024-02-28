@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignIdFor(patient::class);
             $table->date('start-date');
             $table->date('end-date');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

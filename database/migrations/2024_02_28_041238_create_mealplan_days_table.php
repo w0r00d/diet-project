@@ -30,7 +30,8 @@ return new class extends Migration
 
             $table->tinyText('notes');
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(Patient::class)->constrained();
             $table->float('val');
             
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 

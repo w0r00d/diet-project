@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
             $table->string('meal_name');
-            $table->string('meal_type');
+            $table->enum('meal_type', ['breakfast','snack', 'dinner','lunch']);
             $table->longText('meal_desc');
             $table->unsignedInteger('calories');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 
