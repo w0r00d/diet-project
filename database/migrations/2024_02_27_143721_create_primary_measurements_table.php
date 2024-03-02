@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('measure_date');
             $table->float('weight');
             $table->float('height');
-            $table->longText('notes');
+            $table->longText('notes')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });

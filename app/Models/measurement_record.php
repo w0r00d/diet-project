@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class measurement_record extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['measurement_id', 'patient_id', 'val'];
     public function patient() :BelongsTo {
         return $this->belongsTo(patient::class);
     }

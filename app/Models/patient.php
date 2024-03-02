@@ -9,7 +9,7 @@ class patient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first-name', 'last-name', 'dob','gender', 'phone', 'email']; 
+    protected $fillable = ['first_name', 'last_name', 'dob','gender', 'phone', 'email']; 
 
     public function primary_measurements() :hasMany {
 

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('mealplans', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(patient::class);
-            $table->date('start-date');
-            $table->date('end-date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
