@@ -27,12 +27,17 @@ class PatientResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('first_name')
                 ->required()
-                ->maxLength(255),
+                ->maxLength(255)
+                ->placeholder('first name')
+             ,
                 Forms\Components\TextInput::make('last_name')
                 ->required()
-                ->maxLength(255),
+                ->maxLength(255)
+                ,
                 Forms\Components\DatePicker::make('dob')
-                ->required(),
+                ->required()
+                ->displayFormat('d/m/Y')
+                ->maxDate(now()),
                 Forms\Components\Select::make('gender')
                 ->options(['female'=>'female',
                  'male'=>'male'])

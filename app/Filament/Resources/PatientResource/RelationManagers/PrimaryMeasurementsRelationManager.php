@@ -20,7 +20,8 @@ class PrimaryMeasurementsRelationManager extends RelationManager
             ->schema([
                 Forms\Components\DatePicker::make('measure_date')
                 ->required()
-                ->default(now()),
+                ->default(now())
+                ->displayFormat('d/m/Y'),
                 Forms\Components\TextInput::make('weight')
                     ->required()
                     ->numeric(),
@@ -38,7 +39,8 @@ class PrimaryMeasurementsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('weight')
             ->columns([
-                Tables\Columns\TextColumn::make('measure_date'),
+                Tables\Columns\TextColumn::make('measure_date')
+                ->sortable(),
                 Tables\Columns\TextColumn::make('weight'),
                 Tables\Columns\TextColumn::make('height'),
             ])
@@ -54,7 +56,7 @@ class PrimaryMeasurementsRelationManager extends RelationManager
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
