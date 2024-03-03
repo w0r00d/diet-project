@@ -31,7 +31,8 @@ class MeasurementResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('mesurement_desc'),
+                Tables\Columns\TextColumn::make('mesurement_desc')
+                ->label('المقياس'),
             ])
             ->filters([
                 //

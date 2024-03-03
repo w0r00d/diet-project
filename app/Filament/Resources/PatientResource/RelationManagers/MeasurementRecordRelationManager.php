@@ -34,7 +34,8 @@ class MeasurementRecordRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('val')
             ->columns([
-                Tables\Columns\TextColumn::make('val'),
+                Tables\Columns\TextColumn::make('val')
+               ,
             ])
             ->filters([
                 //
