@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class mealcondition extends Model
 {
     use HasFactory;
-
+    protected $fillable =['condition_id', 'meal_id'];
     public function meal(): BelongsTo{
         return $this->belongsTo(meal::class);
     }

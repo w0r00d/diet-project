@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class condition extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['condition_name'];
     public function mealcondition() : HasMany{
         return $this->hasMany(mealcondition::class);
     }
