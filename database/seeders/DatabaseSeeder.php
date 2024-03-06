@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\primary_measurement;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\Patient::factory()->count(5)
+        ->has(primary_measurement::factory()->count(2))
+        ->create();
     }
 }
